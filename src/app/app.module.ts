@@ -10,7 +10,9 @@ import { ServiceComponent } from './service/service.component';
 import { OffersComponent } from './offers/offers.component';
 import { CoachesComponent } from './coaches/coaches.component';
 import { FormModalComponent } from './form-modal/form-modal.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-center-center'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],
