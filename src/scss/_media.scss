@@ -1,0 +1,449 @@
+@media (max-width: 1200px) {
+  .banner {
+    &__content {
+      padding: 53px 37px 50px 0;
+    }
+    &__title {
+      font-size: 54px;
+      line-height: 60px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 30px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
+  }
+  .card {
+    &__figure {
+      min-height: 380px;
+    }
+    &__body {
+      padding: 28px 20px;
+    }
+    &__item {
+      font-size: 14px;
+    }
+  }
+  .title {
+    &--h2 {
+      font-size: 30px;
+    }
+    &--h3 {
+      font-size: 21px;
+    }
+  }
+  .slider-card {
+    &__body {
+      padding: 43px 23px;
+    }
+  }
+  .slider-card {
+    &__body {
+      padding: 43px 23px;
+    }
+    &__num {
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 700;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    &__item {
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  .banner {
+    &__content {
+      padding: 53px 37px 50px 0;
+    }
+    &__title {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 11px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 28px;
+      margin-bottom: 18px;
+    }
+    &__text {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  }
+  .card {
+    &__header {
+      min-height: 300px;
+    }
+    &__body {
+      padding: 24px 16px;
+    }
+    &__item {
+      font-size: 13px;
+    }
+  }
+  .title {
+    &--h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    &--h3 {
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+  }
+  .text {
+    margin-bottom: 24px;
+    max-width: 668px;
+    font-size: 14px;
+    padding-right: 59px;
+  }
+  .offers {
+    &__item {
+      width: calc(25% - 30px);
+      margin-bottom: 34px;
+    }
+    &__figure {
+      margin-bottom: 10px;
+    }
+    &__img {
+      &::before {
+        font-size: 50px;
+        color: $accent;
+      }
+    }
+    &__item-text {
+      font-size: 14px;
+    }
+  }
+  .copyright {
+    font-size: 14px;
+  }
+  .coaches__text {
+    margin-bottom: 0;
+  }
+  .slider-card {
+    &__figure {
+      overflow: hidden;
+      max-width: 100%;
+      min-width: 240px;
+      width: auto;
+      min-height: 340px;
+      height: auto;
+      position: relative;
+    }
+    &__body {
+      padding: 16px 23px 50px;
+      position: relative;
+    }
+    &__num {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 9px;
+    }
+    &__title {
+      margin-bottom: 4px;
+    }
+    &__subtitle {
+      font-size: 13px;
+      line-height: 21px;
+      margin-bottom: 16px;
+    }
+    &__list {
+      margin-bottom: 0;
+    }
+    &__item {
+      font-size: 13px;
+      line-height: 21px;
+      margin-bottom: 8px;
+      span {
+        display: block;
+      }
+    }
+  }
+  .slider-card__btn {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    font-size: 0;
+    line-height: 0;
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    padding: 0;
+    &::after {
+      content: "\E009";
+      font-size: 20px;
+      line-height: 0.8;
+      font-family: "icons";
+      border-radius: 50%;
+      color: $accent;
+    }
+    &:hover {
+      background-color: $accent;
+    }
+    &:hover::after {
+      color: #fff;
+    }
+  }
+}
+@media (max-width: 900px) {
+  .header {
+    &__inner {
+      height: 57px;
+    }
+  }  
+  .lock {
+    overflow: hidden;
+  }
+  .banner,
+  .offers {
+    margin-bottom: 56px;
+  }
+  .services {
+    margin-bottom: 20px;
+    &__item {
+      margin-bottom: 0;
+    }
+  }
+  .coaches {
+    margin-bottom: 20px;
+  }
+  .banner {
+    margin-top: 57px;
+    &__inner {
+      flex-direction: column;  
+    }      
+    &__img {
+      min-height: 400px;
+    }
+    &__content {
+      max-width: 100%;
+      order: 1;
+      padding: 30px 59px 50px 0;    
+    }
+    &__title {
+      max-width: 100%;
+    }
+  }  
+  .main-nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    padding: 40px 24px;
+    background-color: #fff;
+    background-image: url(../images/Menu.svg);
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+    z-index: 1;
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+    overflow: hidden;
+    border-bottom: 4px solid $accent;
+    &.active {
+      transform: translateX(0);
+    }
+    &__title {
+      display: block;
+      margin-bottom: 48px;
+      position: relative;
+      z-index: 1;
+    }
+    &__list {
+      display: block;
+      position: relative;
+      z-index: 1;
+      &--mod {
+        margin-right: 0;
+      }
+    }
+    &__item {
+      margin: 0 0 40px;
+      &:last-child {
+        margin-bottom: 56px;
+      }
+    }
+    &__link {
+      font-size: 24px;
+      line-height: 28px;
+      font-weight: 700;
+      font-family: "Montserrat", sans-serif;
+      &::after {
+        width: 0px;
+        height: 2px;
+        transition: width .3s;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+  .transformer-btn {
+    position: relative;
+    z-index: 1;
+    &__span {
+      &--mobile {
+        display: block;
+      }
+      &--desktop {
+        display: none;
+      }
+    }
+    &--mobile {
+      border-color: $accent;
+      color: $accent;
+      padding: 11px 40px 10px;
+      &:hover {
+        background-color: $accent;
+        color: #fff;
+      }
+    }
+  }
+  .burger-btn {
+    display: block;
+  }
+  .close-btn {
+    display: block;
+    height: 20px;
+    width: 20px;
+    border: none;
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    background-color: transparent;
+    cursor: pointer;
+    z-index: 1;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -1px;
+      margin-left: -12px;
+      height: 2px;
+      width: 24px;
+      background-color: $bg;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .offers {
+    &__list {
+      justify-content: start;
+    }
+    &__item {
+      width: calc(33.333% - 30px);
+    }
+  }
+  .services__list {
+    .slick-track {
+      margin-bottom: 56px;
+    }
+  }
+  .slider-card {
+    &__inner {
+      flex-direction: column;
+    }
+    &__figure {
+      width: 100%;
+      min-height: 340px;
+    }
+    &__body {
+      padding: 16px 23px 32px;
+    }
+    &__list {
+      max-width: 210px;
+    }
+  }
+  .slider-cards .slick-dots,
+  .coaches-slider .slick-dots {
+    display: flex;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+  }
+  .slider-cards .slick-dots li,
+  .coaches-slider .slick-dots li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & + li {
+      margin-left: 4px;
+    }
+  }
+  .slider-cards .slick-dots button,
+  .coaches-slider .slick-dots button {
+    width: 6px;
+    height: 6px;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .slider-cards .slick-dots .slick-active button,
+  .coaches-slider .slick-dots .slick-active button {
+    background-color: $accent;
+    border: none;
+  }
+  .counter {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .text {
+    padding-right: 0;
+  }
+  .offers {
+    &__list {
+      margin: 0 -10px;
+    }
+    &__item {
+      width: calc(50% - 20px);
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    &__item-text {
+      max-width: 100%;
+    }
+  }
+  .banner {
+    &__img {
+      min-height: 280px;
+    }
+    &__content {
+      padding: 30px 59px 50px 0;
+    }
+  }
+  .card {
+    &__header {
+      min-height: 280px;
+    }
+  }
+  .slider-card {
+    &__figure {
+      min-height: 280px;
+    }
+  }
+}

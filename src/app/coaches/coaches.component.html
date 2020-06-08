@@ -1,0 +1,28 @@
+<section class="coaches">
+  <div class="container">
+    <div class="coaches__inner">
+      <h2 class="title title--h2 coaches__title">{{data.meta.title}}</h2>
+      <p class="coaches__text text">{{data.meta.description}}</p>
+      <div class="coaches-slider">
+        <div class="coaches-slider__item slider-card" *ngFor="let card of data.content; let i = index">
+          <div class="slider-card__inner">
+            <div class="slider-card__figure">
+              <img src="../../assets/images/content_005.jpg" alt="description" class="img slider-card__img">
+            </div>
+            <div class="slider-card__body">
+              <p class="slider-card__num">{{'0'+(i+1)}}</p>
+              <h3 class="slider-card__title title title--h3">{{card.name}}</h3>
+              <p class="slider-card__subtitle">{{card.direction}}</p>
+              <ul class="slider-card__list">
+                <li class="slider-card__item"><span>Work experience </span>{{card.workExperience}} years</li>
+                <li class="slider-card__item"><span>Teacher for </span>{{card.teachExperience}} years</li>
+                <li class="slider-card__item"><span>Style </span>{{card.style}}</li>
+              </ul>
+              <a href="{{card.url}}"  class="btn slider-card__btn" type="button">Let’s start</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

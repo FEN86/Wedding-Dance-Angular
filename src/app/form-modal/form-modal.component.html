@@ -1,0 +1,29 @@
+<form class="form-modal" [formGroup]="formModal" (ngSubmit)="submit()">
+  <div class="form-modal__row">
+    <label class="form-modal__label" for="id_001">Email</label>
+    <input class="form-modal__input" type="email" id="id_001" required formControlName="email" placeholder="Enter email">
+    <div class="form-modal__validation" *ngIf="formModal.get('email').invalid && formModal.get('email').touched">
+      <small *ngIf="formModal.get('email').errors.required">The field Email cannot be empty.</small>
+      <small *ngIf="formModal.get('email').errors.email">Enter correct email.</small>
+    </div>
+  </div>
+  <div class="form-modal__row">
+    <label class="form-modal__label" for="id_002">Password</label>
+    <input class="form-modal__input" type="password" id="id_002" required formControlName="password" placeholder="Enter password">
+    <div class="form-modal__validation" *ngIf="formModal.get('password').invalid && formModal.get('password').touched">
+      <small *ngIf="formModal.get('password').errors.required">Enter password.</small>
+      <small *ngIf="formModal.get('password').errors.minlength">
+        Password must be at least {{formModal.get('password').errors.minlength.requiredLength}}.</small>
+    </div>
+  </div>
+  <div class="form-modal__row form-modal__row--btn">
+    <button class="btn form-modal__btn" type="submit" [disabled]="formModal.invalid">Ok</button>
+    <button
+      class="btn form-modal__btn"
+      type="button"
+      data-cancel-modal
+      (click)="onCancel($event)">
+      Cancel
+    </button>
+  </div>
+</form>

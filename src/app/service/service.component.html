@@ -1,0 +1,26 @@
+<section class="services">
+  <div class="container">
+    <div class="services__inner">
+      <h2 class="title title--h2 services__title">{{data.meta.title}}</h2>
+      <p class="services__text text">{{data.meta.description}}</p>
+      <div class="services__list slider-cards">
+        <div class=" services__item card" *ngFor="let card of data.content">
+          <div class="card__inner">
+            <div class="card__header">
+
+              <img class="card__img img" src="../../assets/images/content_002.jpg" alt="description">
+
+            </div>
+            <div class="card__body">
+              <a href="{{card.url}}" class="card__title title title--h3">{{card.title}}</a>
+              <ul class="card__list">
+                <li class="card__item">First Dance</li>
+                <li class="card__item">Parent & Child Dance</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

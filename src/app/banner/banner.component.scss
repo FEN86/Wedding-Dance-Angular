@@ -1,0 +1,120 @@
+@import "vars";
+
+// :host {
+//   display: block;
+//   margin-top: 72px;
+//   margin-bottom: 100px;
+// }
+.banner {
+  margin-top: 72px;
+  margin-bottom: 100px;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__img {
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    min-height: 500px;
+    height: auto;
+    width: 100%;
+  }
+  &__content {
+    max-width: 460px;
+    padding: 73px 77px 80px 0;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 1;
+    max-width: 348px;
+    margin-bottom: 16px;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 40px;
+  }
+  &__text {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .banner {
+    &__content {
+      padding: 53px 37px 50px 0;
+    }
+    &__title {
+      font-size: 54px;
+      line-height: 60px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 30px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
+  }  
+}
+@media (max-width: 1024px) {
+  .banner {
+    &__content {
+      padding: 53px 37px 50px 0;
+    }
+    &__title {
+      font-size: 36px;
+      line-height: 40px;
+      margin-bottom: 11px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 28px;
+      margin-bottom: 18px;
+    }
+    &__text {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  }  
+}
+@media (max-width: 900px) {
+  // :host {
+  //   margin-bottom: 56px;
+  //   margin-top: 57px;
+  // }
+  .banner {
+    margin-bottom: 56px;
+    margin-top: 57px;
+    &__inner {
+      flex-direction: column;  
+    }      
+    &__img {
+      min-height: 400px;
+    }
+    &__content {
+      max-width: 100%;
+      order: 1;
+      padding: 30px 59px 50px 0;    
+    }
+    &__title {
+      max-width: 100%;
+    }
+  }  
+  
+}
+@media (max-width: 650px) {  
+  .banner {
+    &__img {
+      min-height: 280px;
+    }
+    &__content {
+      padding: 30px 59px 50px 0;
+    }
+  }  
+}

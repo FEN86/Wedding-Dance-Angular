@@ -1,0 +1,54 @@
+<section class="offers">
+  <div class="container">
+    <button type="button" *ngIf="isAuthorized()" (click)="editable = true;">EDIT</button>
+    <div class="offers__inner">
+      <h2 class="title title--h2 offers__title">{{data.meta.title}}</h2>
+      <p class="offers__text text">{{data.meta.description}}</p>
+      <div class="offers__list">
+        <div class="offers__item" *ngFor="let item of data.content; let i = index">
+          <a class="offers__link" href="{{item.url}}">
+            <div class="offers__figure">
+              <i class="offers__img icon" [ngClass]="'icon-ico0'+(i+1)"></i>
+            </div>
+            <p class="offers__item-text">{{item.title}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div *ngIf="editable">
+  <div class="modal-edit">
+    <div class="modal-edit__inner">
+      <div class="modal-edit__body">
+        <form class="form-modal">
+          <h2 class="form-modal__title">Section editor</h2>
+          <div class="form-modal__row">
+            <label class="form-modal__label" for="id_001">Title</label>
+            <input class="form-modal__input" type="text" id="id_001" required [value]="data.meta.title">
+          </div>
+          <div class="form-modal__row">
+            <label class="form-modal__label" for="id_002">Description</label>
+            <textarea class="form-modal__textarea" id="id_002" required [value]="data.meta.description"></textarea>
+          </div>
+          <div class="form-modal__row">
+            <label class="form-modal__label" for="id_003">Content</label>
+            <input class="form-modal__input" type="text" id="id_003" required [value]="data.content.title">
+          </div>
+          <div class="form-modal__row">
+            <label class="form-modal__label" for="id_004">Content2</label>
+            <input class="form-modal__input" type="text" id="id_004" required [value]="data.content.title">
+          </div>
+          <div class="form-modal__row">
+            <label class="form-modal__label" for="id_005">Content3</label>
+            <input class="form-modal__input" type="text" id="id_005" required [value]="data.content.title">
+          </div>
+          <div class="form-modal__row form-modal__row--btn">
+            <button class="btn form-modal__btn" type="submit">Ok</button>
+            <button class="btn form-modal__btn" type="button">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

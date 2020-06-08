@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="content">
+    <div *ngIf="!isLoading; else loading">
+      <app-header
+        [data]="sectionContent.navigation"
+        (actionClicked)="openModal()">
+      </app-header>
+      <app-banner [data]="sectionContent.info"></app-banner>
+      <app-service [data]="sectionContent.service"></app-service>
+      <app-offers [data]="sectionContent.offer"></app-offers>
+      <app-coaches [data]="sectionContent.coach"></app-coaches>
+    </div>
+    <ng-template #loading>
+      <div>Loading...</div>
+    </ng-template>
+  </div>
+  <div class="footer-wrapper">
+    <app-footer></app-footer>
+  </div>
+  <div class="modal" #modal>
+    <div class="modal__inner">
+      <div class="modal__body">
+        <app-form-modal
+          (done)="closeModal()"
+          (canceled)="closeModal()">
+        </app-form-modal>
+      </div>
+    </div>
+  </div>
+</div>

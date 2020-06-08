@@ -1,0 +1,19 @@
+@import "vars";
+
+.footer {
+  background-color: $bg;
+  &__inner {
+    height: 88px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+}
+.copyright {
+  color: #fff;
+}
+@media (max-width: 1024px) {
+  .copyright {
+    font-size: 14px;
+  }
+}
