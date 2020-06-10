@@ -1,20 +1,16 @@
 // export interface Data {
 //   [key: string]: any;
 // }
-export  interface Data {
+export interface Data {
   [key: string]: Section;
 }
-
-// export  interface Data2 {
-//   content: Section[];
-// }
 
 export interface Section {
   meta: SectionMeta;
   action?: SectionAction;
   type: string;
-  _id: string;
-  _v: number;
+  _id?: string;
+  _v?: number;
   content: SectionContent;
 }
 
@@ -31,6 +27,10 @@ export interface SectionAction {
 }
 
 export interface SectionContent {
-  [key:string]: any;
+  [key: string]: any;
+}
+
+export interface logUser {
+  access_token: string;
 }
 

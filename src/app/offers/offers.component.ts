@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Section} from "../interfaces/data";
-import {UserService} from "../services/user.service";
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Section } from "../interfaces/data";
+import { UserService } from "../services/user.service";
 
 @Component({
   selector: 'app-offers',
@@ -8,14 +8,13 @@ import {UserService} from "../services/user.service";
   styleUrls: ['./offers.component.scss']
 })
 export class OffersComponent implements OnInit {
-  @Input()
-  public data: Section;
-
+  @Input() public data: Section;
 
   public editable: boolean = false;
 
   constructor(
-    private userService: UserService
+    private userService: UserService,
+
   ) { }
 
   ngOnInit(): void {
@@ -23,5 +22,13 @@ export class OffersComponent implements OnInit {
 
   public isAuthorized(): boolean {
     return this.userService.isAuthorized();
+  }
+
+  openEditor(): void {
+    this.editable = true;
+  }
+
+  closeEditor(): void {
+    this.editable = false;
   }
 }
