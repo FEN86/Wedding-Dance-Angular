@@ -1,6 +1,6 @@
 <section class="offers">
   <div class="container">
-    <button type="button" *ngIf="isAuthorized()" (click)="editable = true;">EDIT</button>
+    <button type="button" *ngIf="isAuthorized()" (click)="openEditor()">EDIT</button>
     <div class="offers__inner">
       <h2 class="title title--h2 offers__title">{{data.meta.title}}</h2>
       <p class="offers__text text">{{data.meta.description}}</p>
@@ -17,40 +17,4 @@
     </div>
   </div>
 </section>
-<div *ngIf="editable">
-  <div class="modal-edit">
-    <div class="modal-edit__inner">
-      <div class="modal-edit__body">
-        <form class="form-modal" [formGroup]="formEditContent" (ngSubmit)="submit()">
-          <h2 class="form-modal__title">Section content editor</h2>
-          <div class="form-modal__row">
-            <label class="form-modal__label" for="id_021">Title</label>
-            <input class="form-modal__input" type="text" id="id_021" required [value]="data.meta.title"
-              formControlName="title">
-          </div>
-          <div class="form-modal__row">
-            <label class="form-modal__label" for="id_022">Description</label>
-            <textarea class="form-modal__textarea" id="id_022" required [value]="data.meta.description"
-              formControlName="description"></textarea>
-          </div>
-          <div class="form-modal__group">
-            <div class="form-modal__row form-modal__row--group">
-              <label class="form-modal__label">Content</label>
-              <input class=" form-modal__input form-modal__input--content" type="text" required
-                *ngFor="let item of data.content" [value]="item.title" formControlName={{item._id}}>
-            </div>
-            <div class="form-modal__row form-modal__row--group">
-              <label class="form-modal__label">Url</label>
-              <input class="form-modal__input form-modal__input--content" type="text" required
-                *ngFor="let item of data.content" [value]="item.url" formControlName={{item.url}}>
-            </div>
-          </div>
-          <div class="form-modal__row form-modal__row--btn">
-            <button class="btn form-modal__btn" type="submit">Ok</button>
-            <button class="btn form-modal__btn" type="button">Cancel</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<app-offers-editor *ngIf="editable" (done)="closeEditor()" (canceled)="closeEditor()" [data]="data"></app-offers-editor>

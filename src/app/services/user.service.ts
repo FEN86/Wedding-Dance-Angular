@@ -3,14 +3,14 @@ import { Observable } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { tap } from "rxjs/operators";
 import { ToastrService } from 'ngx-toastr';
-import { accessToken } from '../interfaces/data';
+import { logUser } from '../interfaces/data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  @Input() accessToken: accessToken;
+  @Input() accessToken: logUser;
 
   private authorized: boolean = true;
 
@@ -23,8 +23,8 @@ export class UserService {
     return this.authorized;
   }
 
-  public login(useremail: string, pass: string): Observable<accessToken> {
-    return this.httpClient.post<accessToken>('https://us-central1-cms-edu-2020-api.cloudfunctions.net/app/api/v1/user/login', {
+  public login(useremail: string, pass: string): Observable<logUser> {
+    return this.httpClient.post<logUser>('https://us-central1-cms-edu-2020-api.cloudfunctions.net/app/api/v1/user/login', {
       email: useremail,
       password: pass
     }).pipe(tap({

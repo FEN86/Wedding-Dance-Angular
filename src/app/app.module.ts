@@ -13,6 +13,7 @@ import { FormModalComponent } from './form-modal/form-modal.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { OffersEditorComponent } from './offers-editor/offers-editor.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
     ServiceComponent,
     OffersComponent,
     CoachesComponent,
-    FormModalComponent
+    FormModalComponent,
+    OffersEditorComponent
   ],
   imports: [
     BrowserModule,

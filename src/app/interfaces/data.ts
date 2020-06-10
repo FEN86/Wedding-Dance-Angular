@@ -9,8 +9,8 @@ export interface Section {
   meta: SectionMeta;
   action?: SectionAction;
   type: string;
-  _id: string;
-  _v: number;
+  _id?: string;
+  _v?: number;
   content: SectionContent;
 }
 
@@ -30,7 +30,7 @@ export interface SectionContent {
   [key: string]: any;
 }
 
-export interface accessToken {
+export interface logUser {
   access_token: string;
 }
 
